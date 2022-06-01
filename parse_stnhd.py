@@ -1,4 +1,7 @@
+from json import dump
 data=open('./Bản sao của STNHĐ - PHASE 5 - CÂU HỎI TRẮC NGHIỆM - TV02 - 025.txt',encoding='utf8').read()
+f=open('data.json','w')
+ttal=[]
 for i in range(1,100,1):
     print(i)
     aq=data[data.index('Câu hỏi %s'%i):data.index('Câu hỏi %s'%(i+1))]
@@ -19,4 +22,7 @@ for i in range(1,100,1):
             # l+=crctn
             crctn=''
             ans_parsed.append(l.split(':',1))
-    print(dict(ans_parsed))
+    ans_parsed=dict(ans_parsed)
+    print(ans_parsed)
+    ttal.append(ans_parsed)
+dump(ttal,f)
