@@ -12,7 +12,7 @@ for i in range(1,100,1):
         if ':' not in l:
             # print('ctn!')
             # print(l)
-            crctn+=l
+            crctn+='\n'+l
             # print(crctn)
             continue
         elif l!='':
@@ -31,7 +31,7 @@ for i in range(1,100,1):
         if ':' not in l:
             # print('ctn!')
             # print(l)
-            crctn+=l
+            crctn+='\n'+l
             # print(crctn)
             continue
         elif l!='':
