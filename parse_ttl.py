@@ -2,9 +2,12 @@ from json import dump
 data=open('./Bản sao của STNHĐ - PHASE 5 - CÂU HỎI TRẮC NGHIỆM - TV02 - 025.txt',encoding='utf8').read().split('Chủ điểm kiến thức 2:')[1]
 f=open('data.json','w')
 ttal=[]
-for i in range(1,100,1):
+for i in range(1,101,1):
     print(i)
-    aq=data[data.index('Câu hỏi %s:'%i):data.index('Câu hỏi %s:'%(i+1))]
+    if i==100:
+        aq=data[data.index('Câu hỏi %s:'%i):]
+    else:
+        aq=data[data.index('Câu hỏi %s:'%i):data.index('Câu hỏi %s:'%(i+1))]
     ans=aq.split('Các phương án lựa chọn:')[1]
     ans_parsed=[]
     crctn=''
