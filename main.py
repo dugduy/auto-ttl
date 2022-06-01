@@ -54,7 +54,7 @@ for data in maindata:
    'name_class': 'Lớp 2',
    'name_course': 'Tiếng Việt',
    'user_created': 15569}
-  data_json['listAnswer'][answs.index(data['a']['Đáp án đúng'].lstrip())]['answer_flag']=True
+  data_json['listAnswer'][answs.index(data['a']['Đáp án đúng'].strip())]['answer_flag']=True
   postdata=dumps(data_json)
   res=post('https://apiptb.5phutthuocbai.com/api/ReviewAll/question/create',postdata,headers=myheader)
   # print(data_json)
