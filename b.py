@@ -1,6 +1,7 @@
 from json import load
 levels=['nhận biết','thông hiểu','vận dụng thấp','vận dụng cao']
-data=load(open('data.json'))[41]
+answs=['A','B','C','D']
+data=load(open('data.json'))[2]
 data_json={'class_id': 5,
  'course_id': 152,
  'topics_id': 'TV02-025',
@@ -22,7 +23,7 @@ data_json={'class_id': 5,
  'sort_order': 2,
  'answer': data['a']['B']},
  {'title': 'C',
- 'answer_flag': True,
+ 'answer_flag': False,
  'status': 1,
  'sort_order': 3,
  'answer': data['a']['C']},
@@ -36,4 +37,6 @@ data_json={'class_id': 5,
  'name_class': 'Lớp 2',
  'name_course': 'Tiếng Việt',
  'user_created': 15569}
+data_json['listAnswer'][answs.index(data['a']['Đáp án đúng'].lstrip())]['answer_flag']=True
+print(data)
 print(data_json)
