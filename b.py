@@ -1,12 +1,13 @@
 from json import load
-data=load(open('data.json'))[0]
+levels=['nhận biết','thông hiểu','vận dụng thấp','vận dụng cao']
+data=load(open('data.json'))[41]
 data_json={'class_id': 5,
  'course_id': 152,
  'topics_id': 'TV02-025',
  'knowledge_topic_Id': 3290,
  'question': data['q']['Câu hỏi'],
  'point': 1,
- 'level': 'level%s',
+ 'level': 'level%s'%(levels.index(data['q']['Mức độ'].lower().lstrip())+1),
  'time_second': 60,
  'status': 1,
  'explain_the_answer': data['a']['Giải thích'],
