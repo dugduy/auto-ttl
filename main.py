@@ -59,3 +59,6 @@ for data in maindata:
   res=post('https://apiptb.5phutthuocbai.com/api/ReviewAll/question/create',postdata,headers=myheader)
   # print(data_json)
   print(res,res.text)
+  while res.status_code!=200:
+    res=post('https://apiptb.5phutthuocbai.com/api/ReviewAll/question/create',postdata,headers=myheader)
+    print(res,res.text)
